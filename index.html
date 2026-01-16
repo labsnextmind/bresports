@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>BR E SPORTS</title>
+
+  <!-- Tailwind CDN (OK for preview/demo) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    body {
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @keyframes pulse-gradient {
+      0%, 100% {
+        background-size: 200% 200%;
+        background-position: left center;
+      }
+      50% {
+        background-size: 200% 200%;
+        background-position: right center;
+      }
+    }
+
+    .animate-pulse-gradient {
+      animation: pulse-gradient 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white antialiased">
+  <div id="root"></div>
+
+  <!-- ✅ Correct Vite entry point -->
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+</html>
