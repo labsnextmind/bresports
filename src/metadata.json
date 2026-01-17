@@ -1,0 +1,5 @@
+{
+  "name": "BR E SPORTS - Tournament App",
+  "description": "A mobile-first React-based tournament web application for e-sports. It allows users to join tournaments, manage their profile, and track their wallet. Includes an admin panel for tournament management.",
+  "requestFramePermissions": []
+}
