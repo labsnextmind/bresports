@@ -1,17 +1,22 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-interface AppContextType {
-  isLoading: boolean;
-  setIsLoading: (v: boolean) => void;
-}
+type AppContextType = {
+  loading: boolean;
+  setLoading: (value: boolean) => void;
+};
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(false);
+export const AppProvider = ({ children }: { children: ReactNode }) => {
+  const [loading, setLoading] = useState(false);
 
   return (
-    <AppContext.Provider value={{ isLoading, setIsLoading }}>
+    <AppContext.Provider
+      value={{
+        loading,
+        setLoading,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
@@ -20,7 +25,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 export const useApp = () => {
   const context = useContext(AppContext);
   if (!context) {
-    throw new Error('useApp must be used within AppProvider');
+    throw new Error("useApp must be used within an AppProvider");
   }
   return context;
 };
